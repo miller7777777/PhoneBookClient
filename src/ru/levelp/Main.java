@@ -121,11 +121,12 @@ public class Main {
 
         try {
             message = reader.readLine();
+            System.out.println(message);
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-        System.out.println(message);
+
 
     }
 
@@ -162,6 +163,12 @@ public class Main {
 
         writer.println(query);
         writer.flush();
+        try {
+            message = reader.readLine();
+            System.out.println(message);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 //    public void removeContact() {
