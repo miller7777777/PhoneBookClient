@@ -113,18 +113,21 @@ public class Main {
 
     private void removeContact() {
 
+        scanner = new Scanner(System.in);
+
         System.out.println("Введите имя удаляемого контакта: ");
-        String answer = scanner.nextLine();
-        String query = "removecontact:" + answer;
+        String delName = scanner.nextLine();
+        String query = "removecontact:" + delName;
         writer.println(query);
         writer.flush();
 
         try {
             message = reader.readLine();
-            System.out.println(message);
         } catch (IOException e) {
             e.printStackTrace();
         }
+        System.out.println(message);
+
 
 
 
