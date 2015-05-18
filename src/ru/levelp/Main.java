@@ -79,7 +79,7 @@ public class Main {
                 addContact();
             } else if (answer == 2) {
                 //удаление
-                //removeContact();
+                removeContact();
             } else if (answer == 3) {
 
                 showAll();
@@ -109,6 +109,24 @@ public class Main {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    private void removeContact() {
+
+        System.out.println("Введите имя удаляемого контакта: ");
+        String answer = scanner.nextLine();
+        String query = "removecontact:" + answer;
+        writer.println(query);
+        writer.flush();
+
+        try {
+            message = reader.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println(message);
+
     }
 
     private void showAll() {
